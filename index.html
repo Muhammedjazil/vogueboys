@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOGUE BOYS | Luxury Fashion, Festive & Formals for Young Gentlemen</title>
+  <meta name="description" content="Discover premium boys' fashion: Royal festive kurtas, bespoke suits, casual streetwear, and summer linen wear tailored for boys aged 2 to 16.">
+  <meta name="keywords" content="boys fashion, boys suits, boys kurtas, kids wedding wear, young gentlemen clothing, boys designer clothes">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-container">
+      <div class="announcement-ticker">
+        <span class="ticker-badge">FESTIVE & SPRING 2026</span>
+        <span class="ticker-text">Use code <strong class="code-pill">GENT20</strong> for 20% OFF on all Festive & Formal Wear!</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-text">Complimentary Worldwide Express Shipping over $99</span>
+      </div>
+      <div class="announcement-controls">
+        <div class="currency-selector-wrapper">
+          <label for="currencySelect" class="sr-only">Currency</label>
+          <select id="currencySelect" class="currency-select" aria-label="Select Currency">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="INR">INR (₹)</option>
+          </select>
+        </div>
+        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="#" class="brand-logo" id="brandLogo">
+        <div class="brand-crest">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">VOGUE BOYS</span>
+          <span class="brand-tagline">Young Gentlemen Atelier</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-navigation" id="mainNavigation">
+        <ul class="nav-menu">
+          <li><a href="#catalog" class="nav-link active" data-filter="all">All Drops</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="festive">Festive & Ethnic</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="formal">Suits & Tuxedos</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="streetwear">Urban Streetwear</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="casual">Linen & Smart Casual</a></li>
+          <li><a href="#catalog" class="nav-link" data-filter="winter">Winter Warmth</a></li>
+          <li><a href="#sizeGuideSection" class="nav-link size-guide-nav-link" id="navSizeGuideLink">Size Advisor</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search & User Actions -->
+      <div class="header-actions">
+        <!-- Live Search -->
+        <div class="search-box-wrapper">
+          <div class="search-bar" id="searchBar">
+            <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="searchInput" placeholder="Search dresses, kurtas, suits..." autocomplete="off">
+            <span class="search-shortcut" title="Press / to search">/</span>
+            <button id="clearSearchBtn" class="clear-search-btn" aria-label="Clear search" style="display: none;">&times;</button>
+          </div>
+          <!-- Live Search Dropdown -->
+          <div class="search-results-dropdown" id="searchResultsDropdown"></div>
+        </div>
+
+        <!-- Wishlist Toggle -->
+        <button class="header-icon-btn" id="wishlistHeaderBtn" aria-label="View Wishlist" title="Your Wishlist">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge" id="wishlistBadge">0</span>
+        </button>
+
+        <!-- Cart Toggle -->
+        <button class="header-icon-btn cart-btn" id="cartHeaderBtn" aria-label="View Bag" title="Shopping Bag">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge" id="cartBadge">0</span>
+          <span class="cart-total-header" id="cartTotalHeader">$0.00</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="heroSection">
+    <div class="hero-background">
+      <img src="assets/hero-banner.jpg" alt="Vogue Boys Fashion Editorial Campaign" class="hero-bg-img" id="heroBannerImg">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-pill">
+        <span class="sparkle">✦</span>
+        <span>THE NEW 2026 JUNIOR COUTURE DROP</span>
+      </div>
+      <h1 class="hero-title">Dignified Style for the <br><span class="accent-serif">Modern Young Gentleman</span></h1>
+      <p class="hero-subtitle">Bespoke 3-piece tuxedos, royal embroidered kurtas, breathable Mediterranean linens, and bold street styles — tailored precisely for boys aged 2 to 16.</p>
+      
+      <div class="hero-cta-group">
+        <a href="#catalog" class="btn btn-primary" id="heroShopBtn">
+          <span>Shop The Collection</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <button class="btn btn-glass" id="heroFestiveBtn" data-category="festive">
+          <span>Explore Festive & Wedding</span>
+          <span class="badge-mini">Trending</span>
+        </button>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="hero-trust-bar">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Hypoallergenic & Soft Linings</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          <span>Free Express Shipping $99+</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+          <span>30-Day Hassle-Free Returns</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Categories Quick-Pills -->
+  <section class="story-categories-section">
+    <div class="section-container">
+      <div class="story-scroll-track" id="storyCategoryTrack">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog & Shopping Section -->
+  <section class="catalog-section" id="catalog">
+    <div class="section-container">
+      
+      <!-- Catalog Header & Control Bar -->
+      <div class="catalog-header">
+        <div>
+          <span class="section-eyebrow">CURATED BOYS' COUTURE</span>
+          <h2 class="section-title">The Master Collection</h2>
+          <p class="section-desc">Every piece crafted with comfort-first inner linings, adjustable waists, and durable luxury fabrics.</p>
+        </div>
+        <div class="catalog-summary">
+          <span id="productCountBadge" class="count-badge">Showing 10 styles</span>
+        </div>
+      </div>
+
+      <!-- Filters & Sorting Bar -->
+      <div class="filter-controls-panel">
+        <!-- Category Filter Pills -->
+        <div class="category-pills" id="categoryPills">
+          <button class="cat-pill active" data-category="all">All Styles</button>
+          <button class="cat-pill" data-category="festive">Festive & Ethnic</button>
+          <button class="cat-pill" data-category="formal">Suits & Tuxedos</button>
+          <button class="cat-pill" data-category="streetwear">Urban Streetwear</button>
+          <button class="cat-pill" data-category="casual">Linen & Resort</button>
+          <button class="cat-pill" data-category="winter">Winter Outerwear</button>
+        </div>
+
+        <div class="filter-secondary-row">
+          <!-- Age Group Filters -->
+          <div class="filter-group">
+            <label for="ageGroupFilter" class="filter-label">Age Group:</label>
+            <select id="ageGroupFilter" class="filter-dropdown">
+              <option value="all">All Ages (2 - 16 Yrs)</option>
+              <option value="toddler">Toddler (2 - 4 Yrs)</option>
+              <option value="kids">Kids (5 - 8 Yrs)</option>
+              <option value="junior">Junior (9 - 12 Yrs)</option>
+              <option value="teen">Teen (13 - 16 Yrs)</option>
+            </select>
+          </div>
+
+          <!-- Color Swatch Filters -->
+          <div class="color-filter-group" id="colorFilterGroup">
+            <span class="filter-label">Color:</span>
+            <button class="color-swatch-btn active" data-color="all" title="All Colors">All</button>
+            <button class="color-swatch-btn" data-color="Navy" title="Navy" style="--swatch-color: #0b1e36;"></button>
+            <button class="color-swatch-btn" data-color="Maroon" title="Maroon" style="--swatch-color: #6b1426;"></button>
+            <button class="color-swatch-btn" data-color="Ivory" title="Ivory" style="--swatch-color: #f7f3e8;"></button>
+            <button class="color-swatch-btn" data-color="Sage" title="Sage Green" style="--swatch-color: #9ab49d;"></button>
+            <button class="color-swatch-btn" data-color="Emerald" title="Emerald" style="--swatch-color: #1e4d3a;"></button>
+            <button class="color-swatch-btn" data-color="Denim" title="Denim Blue" style="--swatch-color: #3b5a82;"></button>
+          </div>
+
+          <!-- Price & Sort Options -->
+          <div class="sort-group">
+            <label for="sortSelect" class="filter-label">Sort by:</label>
+            <select id="sortSelect" class="filter-dropdown">
+              <option value="featured">Featured Picks</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Customer Rated</option>
+              <option value="newest">Newest Arrivals</option>
+            </select>
+          </div>
+
+          <!-- Reset Filter Button -->
+          <button id="resetFiltersBtn" class="reset-filters-btn" title="Reset all filters">
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-icon">👔</div>
+        <h3>No styles match your criteria</h3>
+        <p>Try resetting filters or searching for terms like "kurta", "tuxedo", or "jacket".</p>
+        <button class="btn btn-primary" id="clearAllFiltersBtn">Clear All Filters</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Style Lookbook & Features Banner -->
+  <section class="editorial-banner-section">
+    <div class="section-container">
+      <div class="editorial-card">
+        <div class="editorial-media">
+          <img src="assets/ivory-sherwani.jpg" alt="Vogue Boys Royal Indian Festive Sherwani" class="editorial-img" loading="lazy">
+          <div class="editorial-tag">THE HERITAGE ATELIER</div>
+        </div>
+        <div class="editorial-body">
+          <span class="editorial-kicker">CRAFTED FOR MILESTONE CELEBRATIONS</span>
+          <h2 class="editorial-heading">Festive Splendor, Uncompromised Comfort</h2>
+          <p class="editorial-text">Children shouldn't have to suffer scratchy fabrics or stiff silhouettes to look handsome at weddings and festivities. Our boys' festive collection features 100% breathable cotton mulmul linings, elasticated comfort churidars, and lightweight golden brocades.</p>
+          <div class="editorial-stats">
+            <div class="stat-box">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Skin-Soft Cotton Lining</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">2-16Y</span>
+              <span class="stat-label">Precision Age Grading</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">4.9 ★</span>
+              <span class="stat-label">From 15,000+ Parents</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="editorialFestiveCta" data-category="festive">
+            Explore Festive & Sherwanis
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size Advisor Section -->
+  <section class="size-advisor-section" id="sizeGuideSection">
+    <div class="section-container">
+      <div class="size-advisor-card">
+        <div class="size-advisor-header">
+          <div class="advisor-badge">GROWTH-FRIENDLY FIT PROMISE</div>
+          <h2 class="advisor-title">Boy's Fit & Size Master Guide</h2>
+          <p class="advisor-desc">Boys grow fast! Our garments are tailored with 1.5-inch hidden expansion seam allowances on trousers and jackets so outfits last through multiple seasons.</p>
+        </div>
+
+        <div class="size-calculator-box">
+          <div class="calc-row">
+            <div class="calc-field">
+              <label for="childAgeInput">Child's Age (Years):</label>
+              <select id="childAgeInput" class="calc-select">
+                <option value="2">2 - 3 Years</option>
+                <option value="4">4 - 5 Years</option>
+                <option value="6">6 - 7 Years</option>
+                <option value="8" selected>8 - 9 Years</option>
+                <option value="10">10 - 11 Years</option>
+                <option value="12">12 - 13 Years</option>
+                <option value="14">14 - 15 Years</option>
+                <option value="16">16 Years</option>
+              </select>
+            </div>
+            <div class="calc-field">
+              <label for="childBuildInput">Child's Build:</label>
+              <select id="childBuildInput" class="calc-select">
+                <option value="slim">Slim Fit</option>
+                <option value="regular" selected>Regular Fit</option>
+                <option value="husky">Athletic / Husky Fit</option>
+              </select>
+            </div>
+            <div class="calc-action">
+              <button class="btn btn-primary" id="calcRecommendBtn">Get Recommended Size</button>
+            </div>
+          </div>
+          <div class="calc-result" id="calcResultDisplay">
+            <div class="result-highlight">
+              <span class="result-size">Recommended Size: <strong id="recSizeText">Size 8Y (Standard Junior)</strong></span>
+              <span class="result-details" id="recDetailsText">Fits Height 128 - 134 cm | Chest 66 - 69 cm | Trouser length 78 cm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comprehensive Size Table -->
+        <div class="size-table-wrapper">
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th>Standard Size</th>
+                <th>Age Bracket</th>
+                <th>Height (cm / in)</th>
+                <th>Chest (in)</th>
+                <th>Waist (in)</th>
+                <th>Suit Jacket Fit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="size-tag">2Y</span></td>
+                <td>2 - 3 Years</td>
+                <td>92 - 98 cm (36 - 38.5")</td>
+                <td>20.5 - 21.5"</td>
+                <td>19.5 - 20.5"</td>
+                <td>Soft Toddler Shoulder</td>
+              </tr>
+              <tr>
+                <td><span class="size-tag">4Y</span></td>
+                <td>4 - 5 Years</td>
+                <td>104 - 110 cm (41 - 43.5")</td>
+                <td>22 - 23"</td>
+                <td>21 - 22"</td>
+                <td>Light Structured Pad</td>
+              </tr>
+              <tr>
+                <td><span class="size-tag">6Y</span></td>
+                <td>6 - 7 Years</td>
+                <td>116 - 122 cm (45.5 - 48")</td>
+                <td>23.5 - 24.5"</td>
+                <td>22 - 23"</td>
+                <td>Bespoke Youth Lapel</td>
+              </tr>
+              <tr class="highlighted-row">
+                <td><span class="size-tag">8Y</span></td>
+                <td>8 - 9 Years</td>
+                <td>128 - 134 cm (50.5 - 53")</td>
+                <td>25.5 - 26.5"</td>
+                <td>23.5 - 24.5"</td>
+                <td>Tailored Waist Suppress</td>
+              </tr>
+              <tr>
+                <td><span class="size-tag">10Y</span></td>
+                <td>10 - 11 Years</td>
+                <td>140 - 146 cm (55 - 57.5")</td>
+                <td>27.5 - 28.5"</td>
+                <td>25 - 26"</td>
+                <td>Structured Chest Canvas</td>
+              </tr>
+              <tr>
+                <td><span class="size-tag">12Y</span></td>
+                <td>12 - 13 Years</td>
+                <td>152 - 158 cm (60 - 62")</td>
+                <td>29.5 - 31"</td>
+                <td>26.5 - 28"</td>
+                <td>Formal Gentleman Cut</td>
+              </tr>
+              <tr>
+                <td><span class="size-tag">14Y</span></td>
+                <td>14 - 15 Years</td>
+                <td>164 - 170 cm (64.5 - 67")</td>
+                <td>32 - 33.5"</td>
+                <td>28.5 - 30"</td>
+                <td>Young Adult Tailoring</td>
+              </tr>
+              <tr>
+                <td><span class="size-tag">16Y</span></td>
+                <td>16+ Years</td>
+                <td>172 - 178 cm (68 - 70")</td>
+                <td>34 - 36"</td>
+                <td>30 - 32"</td>
+                <td>Slim Menswear Cut</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews & Social Proof -->
+  <section class="reviews-section">
+    <div class="section-container">
+      <div class="reviews-header text-center">
+        <span class="section-eyebrow">PARENT & FAMILY VOICES</span>
+        <h2 class="section-title">Loved by Young Gentlemen & Their Families</h2>
+        <div class="overall-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-text">4.92 / 5 Average Rating from over 18,400 verified family orders</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <h3 class="review-title">"My son looked like royalty at his uncle's wedding!"</h3>
+          <p class="review-text">"Bought the Royal Brocade Kurta Set for my 8-year-old. Usually he cries within 10 minutes of wearing festive clothes because they itch, but this one has soft mulmul cotton lining inside. He danced the whole evening comfortably!"</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">SP</div>
+            <div>
+              <div class="reviewer-name">Sophia P.</div>
+              <div class="reviewer-loc">Verified Parent • London, UK</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <h3 class="review-title">"The 3-Piece Tuxedo fit as if custom bespoke"</h3>
+          <p class="review-text">"The satin shawl lapel on the midnight navy suit is breathtaking. People literally stopped us at the gala to ask which designer dressed him. The adjustable inner waist in the trousers is a lifesaver."</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">MR</div>
+            <div>
+              <div class="reviewer-name">Marcus Reynolds</div>
+              <div class="reviewer-loc">Verified Buyer • New York, USA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <h3 class="review-title">"Varsity Bomber jacket is his favorite school coat"</h3>
+          <p class="review-text">"Super cool aesthetic and exceptional stitching. Heavyweight warm wool blend with soft sleeves. He gets compliments everywhere we go. Vogue Boys is now our go-to shop."</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">AK</div>
+            <div>
+              <div class="reviewer-name">Aarav & Kavita K.</div>
+              <div class="reviewer-loc">Verified Buyer • Mumbai, India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter & VIP Club -->
+  <section class="newsletter-section">
+    <div class="section-container">
+      <div class="newsletter-card">
+        <div class="newsletter-content">
+          <span class="newsletter-badge">JOIN THE GENTLEMAN'S CLUB</span>
+          <h2 class="newsletter-title">Receive $25 Off Your First Order</h2>
+          <p class="newsletter-subtitle">Be the first to access private seasonal drops, festive wedding edits, and priority size reservations.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+              <button type="submit" class="btn btn-primary">Join VIP List</button>
+            </div>
+            <span class="newsletter-disclaimer">Instant coupon delivered to your inbox. Unsubscribe anytime.</span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <div class="brand-logo footer-logo">
+            <div class="brand-crest">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+              </svg>
+            </div>
+            <span class="brand-title">VOGUE BOYS</span>
+          </div>
+          <p class="footer-desc">The international luxury atelier for boys' ceremonial, festive, formal, and contemporary fashion. Dressing young gentlemen with dignity and supreme comfort.</p>
+          <div class="payment-badges">
+            <span class="pay-pill">Visa</span>
+            <span class="pay-pill">Mastercard</span>
+            <span class="pay-pill">Apple Pay</span>
+            <span class="pay-pill">Google Pay</span>
+            <span class="pay-pill">Amex</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">Collections</h3>
+          <ul class="footer-links">
+            <li><a href="#catalog" data-filter="festive">Royal Festive Kurtas</a></li>
+            <li><a href="#catalog" data-filter="formal">3-Piece Tuxedos & Suits</a></li>
+            <li><a href="#catalog" data-filter="streetwear">Varsity Bombers & Hoodies</a></li>
+            <li><a href="#catalog" data-filter="casual">Linen Mandarin Shirts</a></li>
+            <li><a href="#catalog" data-filter="winter">Winter Puffers & Woolens</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">Care & Services</h3>
+          <ul class="footer-links">
+            <li><a href="#sizeGuideSection">Boy's Size Guide (2-16Y)</a></li>
+            <li><a href="#" id="footerDeliveryBtn">Delivery & Tracking</a></li>
+            <li><a href="#" id="footerReturnsBtn">30-Day Returns Policy</a></li>
+            <li><a href="#" id="footerFabricBtn">Hypoallergenic Fabric Care</a></li>
+            <li><a href="#" id="footerGiftBtn">Gift Packaging & Notes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">Concierge & Boutiques</h3>
+          <p class="footer-contact-line"><strong>Atelier Hours:</strong> Mon - Sat: 9am - 8pm EST</p>
+          <p class="footer-contact-line"><strong>Direct Line:</strong> +1 (800) 489-GENT</p>
+          <p class="footer-contact-line"><strong>Concierge:</strong> concierge@vogueboys.com</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+            <a href="#" class="social-icon" aria-label="Pinterest">PIN</a>
+            <a href="#" class="social-icon" aria-label="Facebook">FB</a>
+            <a href="#" class="social-icon" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 VOGUE BOYS ATELIER INC. ALL RIGHTS RESERVED.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-backdrop" id="quickViewModal">
+    <div class="modal-dialog quick-view-dialog">
+      <button class="modal-close-btn" id="closeQuickViewBtn" aria-label="Close modal">&times;</button>
+      <div class="quick-view-content" id="quickViewContent">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-Over Drawer -->
+  <div class="drawer-backdrop" id="cartDrawerBackdrop">
+    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+      <div class="cart-drawer-header">
+        <div class="drawer-title-group">
+          <h3 class="drawer-title">Shopping Bag</h3>
+          <span class="drawer-count" id="cartItemCountText">(0 items)</span>
+        </div>
+        <button class="drawer-close-btn" id="closeCartDrawerBtn" aria-label="Close bag">&times;</button>
+      </div>
+
+      <!-- Free Shipping Indicator -->
+      <div class="free-shipping-bar">
+        <div class="free-shipping-text" id="freeShippingText">Add $99.00 more for Free Express Shipping!</div>
+        <div class="shipping-progress-track">
+          <div class="shipping-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List -->
+      <div class="cart-drawer-body" id="cartDrawerBody">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Cart Drawer Footer -->
+      <div class="cart-drawer-footer" id="cartDrawerFooter">
+        <!-- Coupon Box -->
+        <div class="coupon-box">
+          <input type="text" id="couponCodeInput" placeholder="Discount code (try GENT20)" autocomplete="off">
+          <button class="btn btn-secondary btn-sm" id="applyCouponBtn">Apply</button>
+        </div>
+        <div class="coupon-status" id="couponStatus"></div>
+
+        <!-- Price Breakdown -->
+        <div class="cart-summary-lines">
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="cartSubtotalText">$0.00</span>
+          </div>
+          <div class="summary-line discount-line" id="discountLine" style="display: none;">
+            <span>Discount (<span id="discountCodeText">GENT20</span>)</span>
+            <span id="cartDiscountText">-$0.00</span>
+          </div>
+          <div class="summary-line">
+            <span>Estimated Shipping</span>
+            <span id="cartShippingText">Calculated next</span>
+          </div>
+          <div class="summary-line total-line">
+            <span>Estimated Total</span>
+            <span id="cartGrandTotalText">$0.00</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-block checkout-cta" id="cartCheckoutBtn">
+          <span>Proceed to Checkout</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+        <button class="btn btn-ghost btn-block" id="continueShoppingBtn">Continue Browsing</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Wishlist Slide-Over / Modal -->
+  <div class="drawer-backdrop" id="wishlistDrawerBackdrop">
+    <aside class="cart-drawer wishlist-drawer" id="wishlistDrawer" role="dialog" aria-modal="true" aria-label="Your Wishlist">
+      <div class="cart-drawer-header">
+        <div class="drawer-title-group">
+          <h3 class="drawer-title">Saved Wishlist</h3>
+          <span class="drawer-count" id="wishlistItemCountText">(0 items)</span>
+        </div>
+        <button class="drawer-close-btn" id="closeWishlistDrawerBtn" aria-label="Close wishlist">&times;</button>
+      </div>
+      <div class="cart-drawer-body" id="wishlistDrawerBody">
+        <!-- Injected via JavaScript -->
+      </div>
+    </aside>
+  </div>
+
+  <!-- Complete Multi-Step Checkout Modal -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal-dialog checkout-dialog">
+      <button class="modal-close-btn" id="closeCheckoutBtn" aria-label="Close checkout">&times;</button>
+      
+      <!-- Checkout Wizard Header -->
+      <div class="checkout-steps-nav">
+        <div class="step-indicator active" id="stepIndicator1">
+          <span class="step-num">1</span>
+          <span class="step-label">Shipping</span>
+        </div>
+        <div class="step-line" id="stepLine1"></div>
+        <div class="step-indicator" id="stepIndicator2">
+          <span class="step-num">2</span>
+          <span class="step-label">Payment</span>
+        </div>
+        <div class="step-line" id="stepLine2"></div>
+        <div class="step-indicator" id="stepIndicator3">
+          <span class="step-num">3</span>
+          <span class="step-label">Confirmation</span>
+        </div>
+      </div>
+
+      <div class="checkout-content">
+        <!-- Step 1: Shipping Address -->
+        <div class="checkout-step-page active" id="checkoutStep1">
+          <h3 class="checkout-page-title">Delivery & Recipient Information</h3>
+          <p class="checkout-page-sub">Where should we deliver the young gentleman's attire?</p>
+          
+          <form id="shippingForm" class="checkout-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="shipFirstName">Parent / Guardian First Name *</label>
+                <input type="text" id="shipFirstName" required placeholder="Marcus">
+              </div>
+              <div class="form-field">
+                <label for="shipLastName">Last Name *</label>
+                <input type="text" id="shipLastName" required placeholder="Reynolds">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="shipEmail">Email Address (for order tracking) *</label>
+                <input type="email" id="shipEmail" required placeholder="marcus@example.com">
+              </div>
+              <div class="form-field">
+                <label for="shipPhone">Mobile Phone *</label>
+                <input type="tel" id="shipPhone" required placeholder="+1 (555) 349-2910">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="shipAddress">Street Address *</label>
+              <input type="text" id="shipAddress" required placeholder="742 Evergreen Terrace, Suite 4B">
+            </div>
+
+            <div class="form-row three-cols">
+              <div class="form-field">
+                <label for="shipCity">City *</label>
+                <input type="text" id="shipCity" required placeholder="New York">
+              </div>
+              <div class="form-field">
+                <label for="shipState">State / Region *</label>
+                <input type="text" id="shipState" required placeholder="NY">
+              </div>
+              <div class="form-field">
+                <label for="shipZip">ZIP / Postal Code *</label>
+                <input type="text" id="shipZip" required placeholder="10001">
+              </div>
+            </div>
+
+            <div class="shipping-method-picker">
+              <label class="form-section-label">Select Delivery Speed:</label>
+              <label class="method-option">
+                <input type="radio" name="shippingMethod" value="express" checked>
+                <div class="method-details">
+                  <div class="method-name">Express White-Glove Courier (2-3 Business Days)</div>
+                  <div class="method-desc">Garment bag, bespoke hanger, steam pressed & signature delivery.</div>
+                </div>
+                <div class="method-price" id="shippingMethodPrice">$0.00</div>
+              </label>
+              <label class="method-option">
+                <input type="radio" name="shippingMethod" value="overnight">
+                <div class="method-details">
+                  <div class="method-name">Rush Next-Morning Air (Next Day)</div>
+                  <div class="method-desc">Priority dispatch for urgent festivities and weddings.</div>
+                </div>
+                <div class="method-price">+$19.00</div>
+              </label>
+            </div>
+
+            <div class="checkout-actions">
+              <button type="button" class="btn btn-ghost" id="backToCartFromCheckout">Back to Bag</button>
+              <button type="submit" class="btn btn-primary">Proceed to Payment &rarr;</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Step 2: Payment -->
+        <div class="checkout-step-page" id="checkoutStep2">
+          <h3 class="checkout-page-title">Secure Payment Method</h3>
+          <p class="checkout-page-sub">256-Bit Encrypted High Security Checkout</p>
+
+          <div class="payment-tabs">
+            <button class="pay-tab active" data-tab="card">Credit / Debit Card</button>
+            <button class="pay-tab" data-tab="express">Apple / Google Pay</button>
+            <button class="pay-tab" data-tab="cod">Cash on Delivery</button>
+          </div>
+
+          <form id="paymentForm" class="checkout-form">
+            <!-- Simulated Card Preview -->
+            <div class="credit-card-preview" id="cardPreview">
+              <div class="card-chip"></div>
+              <div class="card-logo">VISA</div>
+              <div class="card-number-display" id="cardNumDisplay">•••• •••• •••• 4242</div>
+              <div class="card-info-row">
+                <div>
+                  <div class="card-label">CARD HOLDER</div>
+                  <div class="card-holder-display" id="cardHolderDisplay">MARCUS REYNOLDS</div>
+                </div>
+                <div>
+                  <div class="card-label">EXPIRES</div>
+                  <div class="card-exp-display" id="cardExpDisplay">08/28</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="cardNumber">Card Number *</label>
+              <input type="text" id="cardNumber" required placeholder="4242 •••• •••• 4242" maxlength="19">
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cardName">Cardholder Name *</label>
+                <input type="text" id="cardName" required placeholder="Marcus Reynolds">
+              </div>
+              <div class="form-field">
+                <label for="cardExpiry">Expiration (MM/YY) *</label>
+                <input type="text" id="cardExpiry" required placeholder="08/28" maxlength="5">
+              </div>
+              <div class="form-field">
+                <label for="cardCvc">CVC / CVV *</label>
+                <input type="password" id="cardCvc" required placeholder="888" maxlength="4">
+              </div>
+            </div>
+
+            <!-- Order Total Summary on Payment -->
+            <div class="payment-order-summary">
+              <span>Final Amount to Pay:</span>
+              <strong id="paymentFinalTotal">$0.00</strong>
+            </div>
+
+            <div class="checkout-actions">
+              <button type="button" class="btn btn-ghost" id="backToStep1Btn">&larr; Back to Shipping</button>
+              <button type="submit" class="btn btn-primary" id="placeOrderBtn">
+                <span>Complete Order</span>
+                <span class="btn-lock-icon">🔒</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Step 3: Confirmation -->
+        <div class="checkout-step-page" id="checkoutStep3">
+          <div class="confirmation-box text-center">
+            <div class="confirmation-icon">✨</div>
+            <h2 class="confirmation-title">Order Confirmed with Honor!</h2>
+            <p class="confirmation-sub">Thank you for choosing Vogue Boys. Your bespoke package is being steam-pressed and packaged in our luxury garment box.</p>
+            
+            <div class="order-receipt-card" id="orderReceiptCard">
+              <!-- Rendered via JavaScript -->
+            </div>
+
+            <div class="confirmation-actions">
+              <button class="btn btn-primary" id="continueAfterOrderBtn">Continue Shopping</button>
+              <button class="btn btn-secondary" id="printReceiptBtn">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                Print Receipt
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
